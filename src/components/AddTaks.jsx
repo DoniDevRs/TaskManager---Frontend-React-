@@ -30,6 +30,8 @@ const AddTask = ({ fetchTasks }) => {
 
             setTask("");
 
+            await toast.success("Task added with success!")
+
         } catch(error) {
             return toast.error("Something wrong!")
         }
