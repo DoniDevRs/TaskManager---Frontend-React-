@@ -1,4 +1,4 @@
-import './Logo.scss';
+import './Login.scss';
 import logo from '../assets/images/logo.png'
 
 import CustomButton from '../components/CustomButton'
@@ -6,10 +6,10 @@ import CustomButton from '../components/CustomButton'
 const Login = () => {
     return (
         <div className="login-container">
-            <img src="{logo}" alt="logo" />
+            <img src={logo} alt="logo" />
 
             <div className="button-container">
-                <CustomButtom>Enter</CustomButtom>
+                <CustomButton>Enter</CustomButton>
             </div>   
 
         </div>
