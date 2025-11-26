@@ -1,4 +1,4 @@
-import { useEffect, useState, useMemo } from "react"
+import { useEffect, useState, useMemo, useCallback } from "react"
 import axios from 'axios'
 import { toast } from 'react-toastify';
 
@@ -10,14 +10,14 @@ import AddTask from "./AddTaks";
 const Tasks = () => {
     const [tasks, setTasks] = useState([]);
 
-    const fetchTasks = async () => {
+    const fetchTasks = useCallback( async () => {
         try {
             const { data } = await axios.get("http://localhost:8000/tasks");
             setTasks(data);
         } catch (_error) {
             toast.error("Wasn´t possible recover tasks.")
         }
-    };
+    }, [])
 
     const lastTasks = useMemo(() => {
         return tasks.filter(task => task.isCompleted === false)
@@ -29,7 +29,7 @@ const Tasks = () => {
 
     useEffect(() => {
         fetchTasks();
-    }, []);
+    }, [fetchTasks]);
 
     return (
         <div className="tasks-container">
