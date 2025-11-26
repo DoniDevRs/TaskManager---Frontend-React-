@@ -32,7 +32,7 @@ const AddTask = ({ fetchTasks }) => {
 
             await toast.success("Task added with success!")
 
-        } catch(error) {
+        } catch(_error) {
             return toast.error("Something wrong!")
         }
 

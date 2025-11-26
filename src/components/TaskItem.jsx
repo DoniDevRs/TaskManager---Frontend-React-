@@ -14,7 +14,7 @@ const TaskItem = ({ task, fetchTasks }) => {
             toast.success("Tasks removed with success!")
 
 
-        } catch(error) {
+        } catch(_error) {
             toast.error("Something wrong!")
 
         }
@@ -31,7 +31,7 @@ const TaskItem = ({ task, fetchTasks }) => {
             await fetchTasks();
 
             toast.success("Task updated with success!")
-        } catch(error) {
+        } catch(_error) {
             toast.error("Something wrong!")
         }
 

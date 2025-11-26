@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import axios from 'axios'
+import { toast } from 'react-toastify';
 
 import './Tasks.scss';
 
@@ -13,8 +14,8 @@ const Tasks = () => {
         try {
             const { data } = await axios.get("http://localhost:8000/tasks");
             setTasks(data);
-        } catch (error) {
-            console.log(error);
+        } catch (_error) {
+            toast.error("Wasn´t possible recover tasks.")
         }
     };
 
